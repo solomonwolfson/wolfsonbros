@@ -236,6 +236,7 @@
         }
 
         .buy-button {
+            display: block;
             background: #444444;
             color: #e8e8e8;
             border: 2px solid #666666;
@@ -249,6 +250,8 @@
             letter-spacing: 2px;
             transition: all 0.2s ease;
             box-shadow: 4px 4px 0px #222222;
+            text-align: center;
+            text-decoration: none;
         }
 
         .buy-button:hover {
@@ -262,6 +265,50 @@
         .buy-button:active {
             box-shadow: none;
             transform: translateY(4px);
+        }
+
+        .how-to-order {
+            background: #1a1a1a;
+            border: 2px solid #333333;
+            border-left: 4px solid #888888;
+            border-radius: 4px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .how-to-order h3 {
+            font-family: 'Press Start 2P', monospace;
+            color: #ffffff;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .how-to-order ol {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .how-to-order ol li {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .how-to-order .step-num {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1rem;
+            color: #666666;
+            min-width: 1.5rem;
+            padding-top: 2px;
         }
 
         footer {
@@ -468,6 +515,24 @@
         <div id="shop">
             <h2 class="section-title">Our Comic Catalog</h2>
 
+            <div class="how-to-order">
+                <h3>How to Order</h3>
+                <ol>
+                    <li>
+                        <span class="step-num">1.</span>
+                        <span>Click <strong style="color:#d4d4d4;">Order</strong> on any comic — your email app will open with the title already filled in.</span>
+                    </li>
+                    <li>
+                        <span class="step-num">2.</span>
+                        <span>Add your <strong style="color:#d4d4d4;">quantity</strong> and <strong style="color:#d4d4d4;">shipping address</strong> to the email and send it.</span>
+                    </li>
+                    <li>
+                        <span class="step-num">3.</span>
+                        <span>Julian or Nigel will reply with payment instructions via <strong style="color:#d4d4d4;">Zelle, Venmo, or PayPal</strong>.</span>
+                    </li>
+                </ol>
+            </div>
+
             <div class="catalog">
             <!-- Comic 1 -->
             <div class="comic-card">
@@ -479,14 +544,7 @@
                     <div class="comic-author">By Nigel Wolfson</div>
                     <p>Stankus finally finds a place to rest. Little did he know, it's a trap.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Stankus The Rat">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Stankus%20The%20Rat&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Stankus%20The%20Rat%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -500,14 +558,7 @@
                     <div class="comic-author">By Nigel Wolfson</div>
                     <p>Stankus brawls with his mom.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Stankus The Rat 2 -- The Curuption">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Stankus%20The%20Rat%202%20--%20The%20Curuption&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Stankus%20The%20Rat%202%20--%20The%20Curuption%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -521,14 +572,7 @@
                     <div class="comic-author">By Julian Wolfson</div>
                     <p>Mini Goober and Harold decide to go to the mines because they were getting bored at home.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Mini Goober">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Mini%20Goober&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Mini%20Goober%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -542,14 +586,7 @@
                     <div class="comic-author">By Julian Wolfson</div>
                     <p>Mini Goober gets a new pool, but there's a surprise waiting inside.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Mini Goober 2">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Mini%20Goober%202&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Mini%20Goober%202%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -563,14 +600,7 @@
                     <div class="comic-author">By Nigel Wolfson</div>
                     <p>Super Goob spots a dumpster fire and starts to attack the people who started it.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Super Goob and the Goob Gangsters">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Super%20Goob%20and%20the%20Goob%20Gangsters&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Super%20Goob%20and%20the%20Goob%20Gangsters%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -584,14 +614,7 @@
                     <div class="comic-author">By Julian Wolfson</div>
                     <p>The main character wakes up in a forest, and has to survive until a helicopter comes to get him.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="AXE">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20AXE&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20AXE%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -605,14 +628,7 @@
                     <div class="comic-author">By Julian Wolfson</div>
                     <p>Timmy crashes out a lot, so his parents have to call someone to discipline him.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Little Crashout">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Little%20Crashout&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Little%20Crashout%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -626,14 +642,7 @@
                     <div class="comic-author">By Nigel Wolfson</div>
                     <p>Lil Dude is small and he plays basketball. He's never scored, but an unexpected twist happens.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="Lil Dude -- First Basket">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20Lil%20Dude%20--%20First%20Basket&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20Lil%20Dude%20--%20First%20Basket%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
 
@@ -647,14 +656,7 @@
                     <div class="comic-author">By Nigel Wolfson</div>
                     <p>A little guy and a tall guy played soccer until... the tall guy went missing.</p>
                     <div class="price">$4.99</div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="your-paypal-email@example.com">
-                        <input type="hidden" name="item_name" value="The Game of Soccer">
-                        <input type="hidden" name="amount" value="4.99">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <button type="submit" class="buy-button">Order</button>
-                    </form>
+                    <a class="buy-button" href="mailto:wolfsonbroscomics@gmail.com?subject=Order%3A%20The%20Game%20of%20Soccer&body=Hi!%20I%27d%20like%20to%20order%3A%0A%0ATitle%3A%20The%20Game%20of%20Soccer%0AQuantity%3A%20%0AShipping%20Address%3A%20%0A%0AThanks!">Order</a>
                 </div>
             </div>
             </div>
